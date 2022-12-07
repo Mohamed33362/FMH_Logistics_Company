@@ -6,9 +6,10 @@ import "./components/I18next"
 import "../node_modules/flag-icon-css/css/flag-icons.min.css";
 
 const LoadingMarkup = () => {
-  <div className="py-4 text-center">
+  return(<div className="py-4 text-center">
     Loading...
   </div>
+  )
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
