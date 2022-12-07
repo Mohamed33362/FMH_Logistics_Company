@@ -8,9 +8,9 @@ i18next
   .use(languageDetector)
   .use(HttpApi)
   .init({
-    supportedLngs:["en","ar"],
+    supportedLngs: ["en", "ar"],
     backend: {
-      loadPath: "/assests/localz/{{lng}}/translation.json",
+      loadPath:"/FMH_Logistics_Company/public/assests/localz/{{lng}}/translation.json",
     },
     detection: {
       order: ["cookie", "htmlTag", "localStorage", "path", "subdomain"],
