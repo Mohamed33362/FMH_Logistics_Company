@@ -1,0 +1,321 @@
+/* to insert tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* hide if there is scroll x */
+body{
+    @apply bg-third overflow-x-hidden dark:bg-slate-900;
+}
+
+/* tailwind class for li */
+.link{
+    @apply px-3 capitalize hover:text-slate-100 transition ease-linear duration-150 text-lg relative z-10 md:flex lg:block flex-col md:text-sm lg:text-lg;
+}
+
+/* tailwind class for li in rtl dir */
+.link-rtl{
+    @apply px-3 capitalize hover:text-slate-100 transition ease-linear duration-150 text-base relative z-10 md:flex lg:block flex-col md:text-sm lg:text-base;
+}
+
+/* after effect to make the line in top get in the li by after */
+.link::after,
+.link-rtl::after{
+    content: "";
+    content: "";
+    width: 90%;
+    height: 2px;
+    background: #a1c8ef;
+    position: absolute;
+    left: 5px;
+    transition: 0.5s;
+    top: -13px;
+}
+
+/* when hover make it git in */
+.link:hover::after,
+.link-rtl:hover::after{
+    height: 55px;
+}
+
+/* to make all links item display above after effect */
+.link > *,
+.link-rtl > *{
+    position: relative;
+    z-index: 1;
+}
+/* all icons */
+svg{
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+/* design Button */
+
+.btn{
+    @apply p-2 rounded-lg capitalize transition ease-linear duration-150
+}
+
+/* design the toggle button */
+.toggler{
+    @apply bg-slate-300 px-3 lg:px-2 py-2 rounded-full items-center justify-center md:flex hidden fixed z-30 md:relative md:text-sm lg:text-2xl;
+}
+/* to make the div get a big hight to justify content */
+.text{
+    height: 90vh;
+}
+
+/* design inputs in Home-Quote-Sec */
+.input{
+    @apply capitalize  p-1 rounded-full w-2/4 shadow-lg focus:transform focus:scale-110 transition ease-linear duration-150 placeholder:px-4
+}
+/* design email error input in Home-Quote-sec */
+.er{
+    padding: 0 7%;
+}
+@media (min-width:640px) {
+    .er{
+        padding: 0 17%;
+    }
+}
+@media (min-width:768px) {
+    .er{
+        padding: 0 15%;
+    }
+}
+/* design text area in Home-Quote-Sec */
+.text-area{
+    @apply w-full rounded-lg shadow-lg placeholder:capitalize placeholder:text-center focus:transform focus:scale-105 transition ease-linear duration-150
+}
+
+/* deign title */
+.title{
+    @apply text-3xl sm:text-4xl font-semibold capitalize text-center dark:text-white;
+}
+
+/* design alerts */
+.alert{
+    @apply dark:text-red-400 text-red-500 capitalize font-medium sm:text-base text-xs
+}
+
+/* design in Home-Contact-sec */
+.contact{
+    @apply flex justify-between sm:flex-row flex-col
+}
+
+/* design text in info part in home-about se */
+.text2{
+    max-width: 455px;
+}
+.details{
+    @apply capitalize 
+}
+/* view toggler in small screen by clicking icon  */
+.view-tog{
+    right: 115px;
+    top: 92vh;
+    transform: translateX(-50%);
+    display: block !important;
+    animation: to-more-right 0.5s linear;
+}
+
+@keyframes to-more-right {
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 115px;
+    }
+}
+
+.view-tog-rtl{
+    left: 165px;
+    top: 92vh;
+    transform: translateX(-50%);
+    display: block !important;
+    animation: to-more-left 0.5s linear;
+}
+
+@keyframes to-more-left {
+    0%{
+        left:-200px;
+    }
+    100%{
+        left: 165px;
+    }
+}
+
+/* view ul by clicking icon */
+.view{
+    @apply z-20 fixed flex flex-col justify-around items-center top-0;
+    animation: to-right 0.5s linear;
+    right: 50px;
+    height: 95vh;
+}
+@keyframes to-right {
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 50px;
+    }
+}
+.view-rtl{
+    @apply z-20 fixed flex flex-col justify-around items-center top-0;
+    animation: to-right-rtl 0.5s linear;
+    left: 50px;
+    height: 95vh;
+}
+/* set animation to get ul with the side nav move */
+@keyframes to-right-rtl {
+    0%{
+        left:-200px;
+    }
+    100%{
+        left: 50px;
+    }
+}
+/* active background landing pic */
+.active{
+    z-index: -1;
+    animation:fade-out 2s linear;
+    color: #966824;
+}
+/* doesn't active background landing pic */
+.non-active{
+    opacity: 0;
+    z-index: -2;
+    transition: 2s;
+}
+/* animation for fade in pic */
+@keyframes fade-out {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* active class for text nav in Home-about-sec */
+
+.active2{
+    @apply text-gray-700
+}
+.non-active2{
+    @apply text-gray-400
+}
+
+/* design the width & the height of pic  */
+.img{
+    @apply absolute left-0 top-0 -z-10 w-screen filter brightness-75 dark:brightness-100 -skew-y-3;
+    height: 95vh;
+}
+/* design the side nav that apper by clicking the open icon in xs media */
+.sidenav{
+    @apply fixed top-0 right-0 bg-slate-400 w-60 h-screen block z-10;
+    animation: to-right2 0.5s linear;
+}
+/* animation for it  */
+@keyframes to-right2 {
+    0%{
+        right: -200px;
+    }
+    100%{
+        right: 0;
+    }
+}
+
+/* design icon in home-service-sec */
+
+.icon{
+    @apply my-4 capitalize text-third hover:bg-sky-900 p-2 rounded-md py-4 cursor-pointer;
+}
+
+/* custom classes */
+.h-50r{
+    height: 50rem;
+}
+
+.overlay{
+    @apply bg-sky-800 w-full sm:h-full absolute left-0 -z-10 opacity-90 h-50r dark:bg-sky-700
+}
+
+.lang-option-view{
+    @apply block absolute right-0 z-50 w-40 bg-white rounded-md top-10;
+    animation: fade-out-option ease-in-out 0.5s ;
+}
+@keyframes fade-out-option {
+    0%{
+        opacity: 0
+    }100%{
+        opacity: 1;
+    }
+}
+.lang-option-view-rtl{
+    @apply block absolute -left-4 z-50 w-40 bg-white rounded-md md:top-9 lg:top-11;
+    animation: fade-out-option ease-in-out 0.5s ;
+}
+
+.lang-option-view2-rtl{
+    @apply block fixed left-14 z-50 w-40 bg-white rounded-md bottom-14;
+    animation: fade-out-option ease-in-out 0.5s ;
+}
+
+.div3-view{
+    @apply fixed z-20 right-16 block;
+    bottom: 0.375rem;
+    animation: to-right3 linear 0.5s;
+}
+
+.div3-view-rtl{
+    @apply fixed  z-20 left-12 block;
+    bottom: 0.2rem;
+    animation: to-right3-rtl linear 0.5s;
+}
+
+@keyframes to-right3-rtl {
+    0%{
+        left: -200px;
+    }
+    100%{
+        left: 4rem;
+    }
+}
+
+.sidenav-rtl{
+    @apply fixed top-0  bg-slate-400 w-60 h-screen block z-10;
+    animation: to-right2-rtl 0.5s linear;
+    left: 0;
+}
+
+@keyframes to-right2-rtl {
+    0%{
+        left: -200px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes to-right3 {
+    0%{
+        right: -200px;
+    }
+    100%{
+        right: 4rem;
+    }
+}
+
+@media (max-width:598px) {
+    .lang-option-view{
+        position: fixed;
+        top: unset;
+        bottom: 56px;
+        right: 56px;
+    }
+}
