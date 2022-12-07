@@ -8,10 +8,10 @@ i18next
   .use(languageDetector)
   .use(HttpApi)
   .init({
+    supportedLngs:["en","ar"],
     backend: {
       loadPath: "/assests/localz/{{lng}}/translation.json",
     },
-    react: { useSuspense: false },
     detection: {
       order: ["cookie", "htmlTag", "localStorage", "path", "subdomain"],
       caches: ["cookie"],
